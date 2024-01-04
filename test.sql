@@ -17,3 +17,20 @@ insert into school.course values
 (1, 'Math'),
 (2, 'English'),
 (3, 'Chinese');
+
+create table school.student_course (
+    student_id int,
+    course_id int,
+    primary key (student_id, course_id),
+    foreign key (student_id) references school.student(id),
+    foreign key (course_id) references school.course(id)
+);
+
+insert into school.student_course values
+(1, 1),
+(1, 2),
+(2, 2),
+(2, 3),
+(3, 1),
+(3, 3);
+```
